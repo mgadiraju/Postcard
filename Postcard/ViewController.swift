@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var enterNameTextField: UITextField!
+    
+    @IBOutlet var messageTextField: UITextField!
+    
+    @IBOutlet var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,5 +27,13 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func sendMessage(sender: AnyObject) {
+        self.messageLabel.text = self.messageTextField.text!;
+        self.messageLabel.hidden = false;
+        self.nameLabel.text = self.enterNameTextField.text!;
+        self.nameLabel.hidden = false;
+        enterNameTextField.resignFirstResponder();
+        messageTextField.resignFirstResponder()
+    }
 }
 
